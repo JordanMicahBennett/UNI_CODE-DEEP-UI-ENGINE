@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=visualDelayLimit
+comment0.target=UNICODE_GuiPanel(int)
+comment1.params=graphics
+comment1.target=void\ paintComponent(java.awt.Graphics)
+numComments=2

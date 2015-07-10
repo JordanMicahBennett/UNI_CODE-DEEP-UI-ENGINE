@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=UNICODE_frame\ applicationWidth\ applicationHeight
+comment0.target=UNICODE_GuiPanel(javax.swing.JFrame,\ int,\ int)
+comment1.params=
+comment1.target=java.util.ArrayList\ generatedCustomComponentList()
+comment2.params=
+comment2.target=float\ getStartupOpacityLevel()
+comment3.params=graphics
+comment3.target=void\ paintComponent(java.awt.Graphics)
+numComments=4

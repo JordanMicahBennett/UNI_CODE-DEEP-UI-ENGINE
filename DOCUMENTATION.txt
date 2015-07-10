@@ -1,0 +1,159 @@
+////////////////////////////////////////////////////////////
+//AUTHOR/CREATOR/DESIGNER: Jordan Micah Bennett (uni-code)
+//Written in 2012
+///////////////////////////////////////////////////////////
+
+
+Uni-code ui engine is a flexible java ux framework that allows the user
+to quickly create very attractive programs in short periods of space time(in 12 simple lines), given that they have
+already constructed textures a priore. A uni-code menu has a boolean attribute which
+may control when entities are visible.
+
+IMPORTANT!: NAMING OF BUTTON TEXTURES FOLLOWS A CERTAIN CONVENTION. YOU NEED ONLY CREATE TWO TEXTURES PER BUTTON, ie. TO REPRESENT 2 STATES; SELECTED(hovered) AND DEFAULT.
+			AS SUCH FOR DEFAULTS NAME SHOULD BE: 0d.fileFormat.
+			AND FOR SELECTED, SHOULD BE: 0s.fileFormat.
+
+
+//////////////////////////////
+//COMPLETE GUIDE
+/////////////////////////////
+	The Uni-Code(tm) Deep Graphics Framework shall allow one to set up fully functional menus/programs in few lines of java code;
+
+
+	
+	
+//////////////////////////////
+//SETTING UP COMPONENTS - These are solely the basic components. More amidst samples.
+/////////////////////////////
+	//////////////////////////////
+	//FONT SETUP
+	//////////////////////////////
+	Just one line, declare this globally where you wish to use uni-code custom font.
+	-------------------------------------------------------------
+	-- private UNICODE_CustomFont font = new UNICODE_CustomFont ( ); --
+	-------------------------------------------------------------
+	//////////////////////////////
+	//TEXTURE PAINT CREATOR SETUP
+	//////////////////////////////
+	----------------------------------------------------------------------------------------------
+	-- private UNICODE_Structure_TexturePaint texture_paint = new UNICODE_Structure_TexturePaint ( ); --
+	----------------------------------------------------------------------------------------------
+	///////////////////////////////////////////////////
+	//TABLE SETUP 
+	//////////////////////////////////////////////////
+	1.Declare a uni-code complex table.
+	--------------------------------------------------------------------------------------
+	-- private UNICODE_Structure_ComplexTable table = new UNICODE_Structure_ComplexTable ( ); --
+	--------------------------------------------------------------------------------------
+	2.Describe columns - takes (string of header names separated by spaces, number of headers)
+	-------------------------------------------------------------------------------------------------------------------
+	-- table.describeColumns ( table.makeColumnDescription ( "header-1 header-2 header-3 header-4 header-5 header-6", 6 ) ); --
+	-------------------------------------------------------------------------------------------------------------------
+	3.Establish colour scheme - this will control how table background and font colour reacts when you click a row, and how rows will appear y default.
+	takes : (default bg colour,default font colour,highlighted bg colour, highlighted font colour)
+	------------------------------------------------------------------------------------------
+	-- table.establishColourScheme ( Color.black, Color.white, Color.white, Color.black );  --
+	------------------------------------------------------------------------------------------
+	4.Setup the table. takes (table row height, texture paint creator, and a table bg image,cell alignnment)
+	alignments: "left", "right", "center". Cell allignment aligns all cell of all data types in the table.
+	------------------------------------------------------------------------------
+	-- table.setup ( 100, texture_paint, "table menu/table bg.png", "center" ); --
+	------------------------------------------------------------------------------
+	5a.add to the table at index. - by default allows only six regular items to be added
+	--------------------------------------------------------------------------------------
+	-- table.addRow ( "data-1 data-2 data-3 data-4 data-5 data-6", addition_index, 6 ); --
+	--------------------------------------------------------------------------------------
+	5b.add to the end table. takes(string of data separated by spac, how many datas)
+	----------------------------------------------------------------------
+	-- table.addRow ( "data-1 data-2 data-3 data-4 data-5 data-6", 6 ); --
+	----------------------------------------------------------------------
+	5c.add custom row at index. This allows for addition of images to your table, and ultimately defining what data your table takes.
+	instead of the standard functions above. Where you use java's standard table model function from the uni-code table to add a row at index. 
+	You simply get the table model via the same table, adding the custom row.
+	-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	-- table.getTableModel ( ).insertRow(insertion_index, new Object [ ] { "a string", an integer, a double, a double, an integer, new ImageIcon ( "image.png" ), a double, a float..... }); --
+	-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	5d.like 5c, but ad the end of the table. Doesn't use an insertion index.
+	-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	-- table.getTableModel ( ).addRow(new Object [ ] { "a string", an integer, a double, a double, an integer, new ImageIcon ( "image.png" ), a double, a float..... }); --
+	-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	6.clean table - this uses the table model to get the data vector of table and remove all elements, then fire table data changed.
+	----------------------
+	-- table.clean ( ); --
+	----------------------
+	7a.remove 1 - removes based on index. takes: (deletion index)
+	----------------------------------------------------------------------
+	-- table.remove ( deletion_index );
+	----------------------------------------------------------------------
+	7b.remove 2 - removes last row
+	----------------------------------------------------------------------
+	-- table.remove ( );
+	----------------------------------------------------------------------
+	8.Showing and Hiding table.
+	8a.Show
+	----------------------------------
+	-- table.setVisibile ( true ); --
+	----------------------------------
+	8b.Hide
+	----------------------------------
+	-- table.setVisibile ( false ); --
+	----------------------------------
+	///////////////////////////////////////////////////
+	//TEXT FIELD SETUP
+	//////////////////////////////////////////////////
+	1.declare
+	--------------------------------------------------------------------------------------------------------------
+	-- UNICODE_TextField text = new UNICODE_TextField ( int x, int y, string label, string description, int description length, boolean is visible, boolean encryption mode ); --
+	--------------------------------------------------------------------------------------------------------------
+	2.draw - allows one to control how text field label, description, and pointer appearance, and relative locations amongst themselves.
+	2.draw.. when drawing uni-code text fields, you pass a string for center_answer as param tah will center the font when yes, and allow x, y specified above to take presidence
+	2.draw.. if not. This means that you pass 0, 0, to x, y in declaration oabove if you pass yes to center_answer. This will center text and ignore x, y, so that's why 0, 0 is passed.
+	3.draw.. the same answer in draw param must be presented to activateClickReceiver ( ) below.
+	2.draw.. The jump x and jump y position font relative to central location. Suppose you have already declared one uni-code text field, that is centrally located.
+	2.draw.. Furthermore, you wish to have another text field centrally located, but not at the same center. The jump x and y alters the central location partially.
+	2.draw.. the same jump x and jump y must be passed to jump x and y inn activateClickReceiver ( ) below.
+	2.draw.. the "pointer" variable is the actuall pointer string that will become the pointer that points to the current chracter index.
+	------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	-- text.draw ( Graphics graphics, Graphics2D graphics2d, UNICODE_CustomFont font, String font_name, float text_field_size, Color text_field_colour, float label_size, Color label_colour, String center_answer, int jump_x, int jump_y, float pointer_size, String pointer, int pointer_distance, Color pointer_colour, String description_font_name ) --
+	------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	3.establish focusing - will allow user to focus on this field when under the label area is clicked.
+	3.establish focusing.. Read what center answer, jump x and jump y do above. This is done in mouse listener, in click function.
+	--------------------------------------------------------------------------------------------------------------
+	-- text.activateClickReceiver ( int mouseX, int mouseY, String center_answer, int jump_x, int jump_y );
+	--------------------------------------------------------------------------------------------------------------
+	4.establish key updating - This is what allows users to manipulate text field in real time...allowing appending, deletion and indent repositioning.
+	4.establish key updating... the last param represents she symbol that will be appended to the screen, should encryption mode be enabled above. 
+	4.establish key updating... If encryption mode is disabled, this string is ignored, and default characters are appended to a text field. 
+	-------------------------------------------------------------------------------------
+	-- text.allowUpdating ( keyEvent, max text field size, String encryption_sybmol ); --
+	-------------------------------------------------------------------------------------
+	///////////////////////////////////////////////////
+	//AUDIO PLAYER SETUP
+	///////////////////////////////////////////////////
+	1.Declare audio playe globally...plays wave files only.
+	---------------------------------------------------------------
+	-- UNICODE_AudioPlayer audio_player = new UNICODE_AudioPlayer ( ); --
+	---------------------------------------------------------------
+	2.Playing audio file - plays audio from location data/audios in project folder.
+	---------------------------------------------
+	-- audio_player.playAudio ( "audio.wav" ); --
+	---------------------------------------------
+	3.Playing audio file - plays audio from custom location in project folder.
+	-----------------------------------------------------------
+	-- audio_player.playAudio ( "<your folder>/audio.wav" ); --
+	-----------------------------------------------------------
+//////////////////////////////
+//ADDITIONAL FEATURES
+//////////////////////////////
+	//////////////////////////////
+	//CIRCLULAR AXIS DISPLAY
+	//////////////////////////////	
+	If you had decided to use circular axis menu, then you can acutally display the axis on which the buttons are aligned.
+	Do this like so, in paintComponent: Takes(graphics 2d, colour) Did I mention i hate how americans spell colour?
+	-----------------------------------------------------
+	-- uniMenu.showUiAxis ( graphics2d, Color.red ); --
+	-----------------------------------------------------
+	///////////////////////////////////////////
+	//SNAP WINDOW TO CENTER OF SCREEN
+	///////////////////////////////////////////
+	The window is draggable amidst any position. To reset to central location on screen, just click anywhere on the program.
