@@ -3,4 +3,4 @@ Title: Horizontal menu sample
 
 
 instructions
-the smallest button on the axis exists the window.
+the smallest button on the axis exits the window.
