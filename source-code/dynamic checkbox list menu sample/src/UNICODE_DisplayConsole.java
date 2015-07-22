@@ -17,7 +17,7 @@ public class UNICODE_DisplayConsole
         //establish covenience pack
         static UNICODE_ConveniencePack conveniencePack = new UNICODE_ConveniencePack ( );
         //establish duration pack for all splash panels 
-        static int [ ] splashPanelDurationCollection = { 200, 200 };
+        static int [ ] splashPanelDurationCollection = { 30, 30 };
         //establish screen dimensions
         static Dimension screenDimension = Toolkit.getDefaultToolkit ( ).getScreenSize ( );
         //establsih gui panel: takes frame,

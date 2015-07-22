@@ -21,13 +21,16 @@ public class UNICODE_GuiPanel extends JPanel
     //establish constructor
     public UNICODE_GuiPanel ( )
     {
+        //background
+        setBackground ( Color.white );
+        
         //establish table 
             //setup table column headers
             table.describeColumns ( table.makeColumnDescription ( "Time Monday Tuesday Wendesday Thursday Friday", 6 ) );
             //define colour scheme [ default(1)background, default(2)foreground, higlighted(3)background, higlighted(4)foreground ]                    
-            table.establishColourScheme ( new Color ( 230, 230, 230, 255 ), new Color ( 80, 80, 80, 255 ), new Color ( 255, 255, 255, 255 ), new Color ( 150, 150, 150, 255 ) );
+            table.establishColourScheme ( new Color ( 255, 255, 255 ), new Color ( 0, 0, 0 ), new Color ( 253, 253, 253 ), new Color ( 200, 200, 200 ) );
             //setup table body for updating
-            table.setup ( 100, "data/images/", "table background.png", "center" ); //BACKGROUND IMAGES ARE ENGINE INTERNAL, must be placed in data/packags/UNICODE/
+            table.setup ( 100, "data/images/", "table background.png", "center", "data/images/intervolve/thumb.png", "data/images/intervolve/track.png", Color.white ); //BACKGROUND IMAGES ARE ENGINE INTERNAL, must be placed in data/packags/UNICODE/
             //table setup DONE!!!!!!!!!!!!!!     
             
             //fill table with excel data!!!!!

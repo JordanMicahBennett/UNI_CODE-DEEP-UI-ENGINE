@@ -9,6 +9,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.DefaultTableCellRenderer;
 import java.awt.Component;
+import javax.swing.BorderFactory;
 import java.awt.Color;
 import java.awt.geom.Ellipse2D;
 import java.awt.Graphics;
@@ -38,7 +39,7 @@ import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentListener;
 import javax.swing.SwingUtilities;
 import java.awt.FlowLayout;
-
+import javax.swing.JScrollBar;
 
 public class UNICODE_Structure_ComplexTable 
 {
@@ -283,7 +284,7 @@ public class UNICODE_Structure_ComplexTable
             }
         
         //miscallaneus
-        public void setup ( int rowHeight, final String table_bg_directory, final String table_bg_image, String alignment )
+        public void setup ( int rowHeight, final String table_bg_directory, final String table_bg_image, String alignment, String tableThumbStream, String tableTrackStream, Color tableBackgroundColour )
         {
          //table
             //make the table model ( with image icon and updatability support )
@@ -363,6 +364,11 @@ public class UNICODE_Structure_ComplexTable
                     };
                 }
             };
+			
+			//customized scrollbar
+			JScrollBar scrollBar = scroll_pane.getVerticalScrollBar ( );
+			scrollBar.setPreferredSize ( new Dimension ( 12, Integer.MAX_VALUE ) );
+			scrollBar.setUI ( new UNICODE_MetalScrollBarUI ( tableThumbStream, tableTrackStream ) );
             
  
             //adjust the table
@@ -376,6 +382,11 @@ public class UNICODE_Structure_ComplexTable
             //set alginment of scroll pane
             scroll_pane.setAlignmentX ( Component.CENTER_ALIGNMENT );
             
+			//set border style
+			getScrollPane ( ).setBorder ( BorderFactory.createLineBorder ( tableBackgroundColour ) );
+			getTable ( ).getTableHeader ( ).setBackground ( tableBackgroundColour );
+ 	
+			
             //add scroll pane to destination panel
             destination_panel.add ( scroll_pane );
         }

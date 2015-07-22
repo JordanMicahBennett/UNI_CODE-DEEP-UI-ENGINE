@@ -85,6 +85,7 @@ public class UNICODE_GuiPanel extends JPanel
     {
         super.paintComponent ( graphics );
         Graphics2D graphics2d = ( Graphics2D ) graphics;
+        
     
         //establish dock dimensions   
         menuButtonDock.setBounds ( 0, 0, applicationWidth, applicationHeight );   
