@@ -3,12 +3,6 @@ WAYFICIENCY SQL + COMPLEX TABLE SAMPLE
 Prebaked, extensive database management.
 
 
-
-??
-=======
-A database aligned, viable train route mechanism framework.
-
-
 ![Alt text](https://github.com/JordanMicahBennett/UNI_CODE-DEEP-UI-ENGINE/blob/master/source-code/data/images/captures/9.png?raw=true"default page")
 =============================
 

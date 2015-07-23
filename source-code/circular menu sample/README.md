@@ -8,6 +8,6 @@ CIRCULAR MENU SAMPLE
 
 INSTRUCTIONS
 =============
-the smallest button on the axis exits the window.
+The smallest button on the axis exits the window.
 
 
