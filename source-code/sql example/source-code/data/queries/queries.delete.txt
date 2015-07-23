@@ -1,0 +1,1 @@
+delete from passenger where passengerSocialSecurityNumber = 1000029

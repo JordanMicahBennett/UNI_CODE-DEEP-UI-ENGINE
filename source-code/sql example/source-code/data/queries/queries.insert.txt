@@ -1,0 +1,139 @@
+////////////////////////////
+//SCHEDULE/TRAVERSAL
+insert into schedule values ( 0, 'KING >>> MNTB', '4:00', '4:30', '7' );
+insert into traversal values ( 0, '1', '2', '50', '2' );
+
+
+insert into schedule values ( 0, 'MNTB >>> BLRV', '6:00', '8:00', '8' );
+insert into traversal values ( 0, '2', '6', '300', '2' );
+
+
+insert into schedule values ( 0, 'BLRV >>> OCHI', '10:00', '11:00', '9' );
+insert into traversal values ( 0, '6', '3', '100', '2' );
+
+
+insert into schedule values ( 0, 'OCHI >>> MONB', '13:30', '14:00', '10' );
+insert into traversal values ( 0, '3', '4', '50', '2' );
+
+
+insert into schedule values ( 0, 'MONB >>> NGRL', '16:00', '16:30', '11' );
+insert into traversal values ( 0, '4', '5', '50', '2' );
+
+
+insert into schedule values ( 0, 'NGRL >>> KING', '18:00', '20:00', '12' );
+insert into traversal values ( 0, '5', '1', '300', '2' );
+
+
+insert into schedule values ( 0, 'NGRL >>> MONB', '6:00', '6:30', '13' );
+insert into traversal values ( 0, '5', '4', '50', '3' );
+
+
+insert into schedule values ( 0, 'MONB >>> OCHI', '10:00', '11:00', '14' );
+insert into traversal values ( 0, '4', '3', '100', '3' );
+
+
+insert into schedule values ( 0, 'OCHI >>> MNTB', '12:00', '12:30', '15' );
+insert into traversal values ( 0, '3', '2', '50', '3' );
+
+
+insert into schedule values ( 0, 'MNTB >>> KING', '14:00', '14:30', '16' );
+insert into traversal values ( 0, '2', '1', '50', '3' );
+
+
+insert into schedule values ( 0, 'KING >>> BLRV', '16:00', '17:00', '17' );
+insert into traversal values ( 0, '4', '3', '100', '3' );
+
+
+insert into schedule values ( 0, 'BLRV >>> NGRL', '18:30', '19:30', '18' );
+insert into traversal values ( 0, '6', '5', '50', '3' );
+
+
+
+
+
+
+
+
+
+
+////////////////////////////
+//PURCHASES
+////////////////////////////
+	////////////////////////////
+	//TICKETS
+	insert into ticket values ( 0, '1', '1000001',  '20150110' );
+	insert into ticket values ( 0, '18', '1000002', '20150822' );
+	insert into ticket values ( 0, '14', '1000003',  '20150717' );
+                                                    
+	insert into ticket values ( 0, '1', '1000004',  '20150110' );
+	insert into ticket values ( 0, '18', '1000005', '20150822' );
+	insert into ticket values ( 0, '14', '1000006',  '20150717' );
+                                                    
+	insert into ticket values ( 0, '1', '1000007',  '20150110' );
+	insert into ticket values ( 0, '18', '1000008', '20150822' );
+	insert into ticket values ( 0, '14', '1000009',  '20150717' );
+                                                    
+	insert into ticket values ( 0, '1', '1000010',  '20150110' );
+	insert into ticket values ( 0, '18', '1000011', '20150822' );
+	insert into ticket values ( 0, '14', '1000012',  '20150717' );
+                                                    
+	insert into ticket values ( 0, '1', '1000013',  '20150110' );
+	insert into ticket values ( 0, '18', '1000014', '20150822' );
+	insert into ticket values ( 0, '14', '1000015',  '20150717' );
+                                                    
+	insert into ticket values ( 0, '1', '1000016',  '20150110' );
+	insert into ticket values ( 0, '18', '1000017', '20150822' );
+	insert into ticket values ( 0, '14', '1000018',  '20150717' );
+                                                    
+	insert into ticket values ( 0, '1', '1000019',  '20150110' );
+	insert into ticket values ( 0, '18', '1000020', '20150822' );
+	insert into ticket values ( 0, '14', '1000021',  '20150717' );
+	insert into ticket values ( 0, '14', '1000021',  '20150717' );
+	                                                
+	insert into ticket values ( 0, '1', '1000022',  '20150110' );
+	insert into ticket values ( 0, '18', '1000023', '20150822' );
+	insert into ticket values ( 0, '14', '1000024',  '20150717' );
+	insert into ticket values ( 0, '15', '1000024', '20150717' ); /*second stop for customer 1000024*/
+	////////////////////////////
+	//PASSENGERS
+	insert into passenger values ( '1000001', 'Chan', 'Salomon' );
+	insert into passenger values ( '1000002', 'Celestine', 'Beyers2' );
+	insert into passenger values ( '1000003', 'Dalia', 'Cassady' );
+
+	insert into passenger values ( '1000004', 'Elisa', 'Goll' );
+	insert into passenger values ( '1000005', 'Carter', 'Janz' );
+	insert into passenger values ( '1000006', 'Leroy', 'Mannon' );
+
+	insert into passenger values ( '1000007', 'Larhonda', 'Eakin' );
+	insert into passenger values ( '1000008', 'Rod', 'Pereira2' );
+	insert into passenger values ( '1000009', 'Dudley', 'Binford
+' );
+
+	insert into passenger values ( '1000010', 'Jonna', 'Defrancisco' );
+	insert into passenger values ( '1000011', 'Darlene', 'Dines' );
+	insert into passenger values ( '1000012', 'Ami', 'Giroir' );
+
+	insert into passenger values ( '1000013', 'Jeniffer', 'Varnell' );
+	insert into passenger values ( '1000014', 'Dulcie', 'Mebane' );
+	insert into passenger values ( '1000015', 'Kristofer', 'Sena' );
+
+	insert into passenger values ( '1000016', 'Kirstie', 'Maberry
+' );
+	insert into passenger values ( '1000017', 'Ileen', 'Bibb2' );
+	insert into passenger values ( '1000018', 'Harry0', 'Randell' );
+
+	insert into passenger values ( '1000019', 'Kermit', 'Pryor' );
+	insert into passenger values ( '1000020', 'Luther', 'Hoda' );
+	insert into passenger values ( '1000021', 'Iva', 'Calcagno' );
+
+	insert into passenger values ( '1000022', 'Arica', 'Legrande' );
+	insert into passenger values ( '1000023', 'Wade', 'Petrarca' );
+	insert into passenger values ( '1000024', 'Kacy', 'Nunez' );
+	
+	
+	
+////////////////////////
+//BUY TEMPLATE
+///////////////////////
+insert into passenger values ( 'number', 'fname', 'lname' );
+insert into ticket values ( 0/*ignore*/, 'routeId', 'above-number',  'yyyymmdd' );

@@ -1,0 +1,2 @@
+update train set trainCapacity = 999 where trainId = 1
+		

@@ -30,7 +30,13 @@ UNIQUELY CUSTOMIZABLE DYNAMIC CHECKBOX LIST
 
 EXPRESSIVE MENU SYSTEM
 ![Alt text](https://github.com/JordanMicahBennett/UNI_CODE-DEEP-UI-ENGINE/blob/master/source-code/data/images/captures/3.png?raw=true"default page")
-?convenient, elegant menu mmechanism
+?convenient, elegant menu mechanism
+
+
+EXTENDED SQL UX EXPRESSION
+===================================
+![Alt text](https://github.com/JordanMicahBennett/UNI_CODE-DEEP-UI-ENGINE/blob/master/source-code/data/images/captures/9.png?raw=true"default page")
+?prebaked, extensive database management 
 
 
 CONVENIENT WINDOW OPACITY MANIPULATION

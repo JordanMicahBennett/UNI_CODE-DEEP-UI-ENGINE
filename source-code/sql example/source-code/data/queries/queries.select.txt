@@ -1,0 +1,111 @@
+//author: Jordan Micah Bennett
+
+
+Questions:
+How much revenue was made on a specified date?
+	select sum(traversal.traversalCost) from traversal join schedule join ticket where ticket.date = '20150110' and ticket.routeId = schedule.routeId;
+
+
+
+
+How many tickets were sold to make this profit?
+	select count(ticket.ticketId) from traversal join schedule join ticket where ticket.date = '20150110' and ticket.routeId = schedule.routeId;
+
+
+
+
+Which route was the most profitable? 
+	A.get routes ids 'sold' & get total sold on each group above
+		select 
+		  schedule.routeId,
+		  sum(traversal.traversalCost) as `aCollectionOfRouteCostsWhereTicketsWereSold`
+		from
+		  traversal join schedule join ticket where ticket.routeId = schedule.routeId and 
+		group by
+		  schedule.routeId
+
+	B.select the maximum of that total sequence.
+		select 
+			TableForACollectionOfRouteCostsWhereTicketsWereSold.routeId,
+			max( aCollectionOfRouteCostsWhereTicketsWereSold )
+		from
+		(
+			select 
+			  schedule.routeId,
+			  sum(traversal.traversalCost) as `aCollectionOfRouteCostsWhereTicketsWereSold`
+			from
+			  traversal join schedule join ticket where ticket.routeId = schedule.routeId
+			group by
+			  schedule.routeId
+		) as TableForACollectionOfRouteCostsWhereTicketsWereSold
+
+
+
+How many trains run into Kingston?
+	select count(traversal.traversalId) from traversal where traversal.stationId1 = 1;
+
+
+
+
+How many passengers travelled on a ticket with multiple stops?
+	A.select a collection of counts of each passenger's tickets, who has multiple tickets ( stops ):
+	select
+	  passenger.passengerSocialSecurityNumber,
+	  count(*) as `aCollectionOftotalNumberOfTicketsPerPassenger`
+	from
+	  ticket join passenger where ticket.passengerSocialSecurityNumber = passenger.passengerSocialSecurityNumber
+	group by
+	  passenger.passengerSocialSecurityNumber;
+	  
+	B.select a maximum on aforesaid:
+	select 
+		count(*)
+	from
+	(
+		select
+			passenger.passengerSocialSecurityNumber,
+			count(*) as `aCollectionOfTheTotalNumberOfTicketsBoughtPerPassenger` /*where count(*) summates passenger ids */
+		from
+			ticket join passenger where ticket.passengerSocialSecurityNumber = passenger.passengerSocialSecurityNumber
+		group by
+			passenger.passengerSocialSecurityNumber
+		having 
+			count(passenger.passengerSocialSecurityNumber) > 1
+	) as TableForACollectionOfTheTotalNumberOfTicketsBoughtPerPassenger
+/*This function is shallow. By extension, such should:
+	a.Take time tn-1(s), tn-1(e) to be the duration of a prior trip. (for s ~ start, e ~ end)
+	b.Determine whether next trip's time tn+1(s) is [tn-1(e)] minus [tn-1(s)] hour(s)/minutes after prior trip's time tn-1.
+	c.If so, that passenger has multiple stops.
+*/
+
+Which train travels for the longest each day?
+	A.get all train id's together with all a count of each's traversal rout
+		select max( aCollectionOfTheTotalNumberOfTrainIdInstances )
+		from
+		(
+			select 
+			  traversal.trainId, datediff(schedule.routeArrivalTime, schedule.routeLeaveTime ),
+			  count(traversal.trainId) as `aCollectionOfTheTotalNumberOfTrainIdInstances`
+			from
+			  traversal join schedule where traversal.traversalId = schedule.traversalId /*constrain only 1 count computation*/
+			group by
+			  traversal.traversalId
+		) as TableForACollectionOfTheTotalNumberOfTrainIdInstances
+		
+		
+
+Which train carries the most passengers on a given date?
+	select 
+		TableForCollectionOfTheTotalNumberOfPassengersPerTrain.trainId,
+		max(aCollectionOfTheTotalNumberOfPassengersPerTrain)
+	from
+    (
+		select 
+			traversal.trainId, 
+			count(*) as `aCollectionOfTheTotalNumberOfPassengersPerTrain`
+		from
+			ticket join traversal join schedule where schedule.routeId = ticket.routeId and schedule.traversalId = traversal.traversalId and date = '2015-01-10 00:00:00'
+		group by
+			traversal.trainId
+	) as TableForCollectionOfTheTotalNumberOfPassengersPerTrain
+
