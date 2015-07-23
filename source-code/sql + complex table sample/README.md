@@ -1,6 +1,10 @@
-WAYFICIENCY SQL + COMPLEX TABLE SAMPLE
+SQL + COMPLEX TABLE SAMPLE
 =====================
 Prebaked, extensive database management.
+
+
+??
+A database encompassing, train route aligned sample, 'wayfiency'. {extensive database management abound}.
 
 
 ![Alt text](https://github.com/JordanMicahBennett/UNI_CODE-DEEP-UI-ENGINE/blob/master/source-code/data/images/captures/9.png?raw=true"default page")
