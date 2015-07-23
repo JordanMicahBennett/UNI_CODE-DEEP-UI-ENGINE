@@ -33,10 +33,3 @@ WRITING
 ==============
 One may either write (or paste) sql queries into text area top right.
 The pasted/written query is ran via BUILD. 
-
-
-
-
-AUTHOR PORTFOLIO
-============================================
-http://jordanbennett.2fh.co/
