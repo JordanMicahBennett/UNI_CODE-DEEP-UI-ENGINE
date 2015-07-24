@@ -43,7 +43,7 @@ public class BUTTON_DOCK extends UNICODE_MenuPanel
             ///////////////////////////////////////
             if ( guiPanel.QUERY_AREA.getText ( ).contains ( "select" ) )
             {
-                //remove previous tables
+                //remove previous table
                 guiPanel.remove ( guiPanel.OUTCOME_TABLE.getScrollPane ( ) );
                     
                 //RE-ESTABLISH OUTCOME TABLE based on latest query
@@ -70,7 +70,7 @@ public class BUTTON_DOCK extends UNICODE_MenuPanel
                     //run insert query
                     guiPanel.DATABASE_MANAGER.insertQuery ( guiPanel.QUERY_AREA.getText ( ) );
                     
-                    //remove previous tables
+                    //remove previous table
                     guiPanel.remove ( guiPanel.OUTCOME_TABLE.getScrollPane ( ) );
                         
                     //RE-ESTABLISH OUTCOME TABLE based on latest query
@@ -93,7 +93,7 @@ public class BUTTON_DOCK extends UNICODE_MenuPanel
                     //run update query
                     guiPanel.DATABASE_MANAGER.updateQuery ( guiPanel.QUERY_AREA.getText ( ) );
                     
-                    //remove previous tables
+                    //remove previous table
                     guiPanel.remove ( guiPanel.OUTCOME_TABLE.getScrollPane ( ) );
                         
                     //RE-ESTABLISH OUTCOME TABLE based on latest query
@@ -116,7 +116,7 @@ public class BUTTON_DOCK extends UNICODE_MenuPanel
                     //run delete query
                     guiPanel.DATABASE_MANAGER.updateQuery ( guiPanel.QUERY_AREA.getText ( ) );
                     
-                    //remove previous tables
+                    //remove previous table
                     guiPanel.remove ( guiPanel.OUTCOME_TABLE.getScrollPane ( ) );
                         
                     //RE-ESTABLISH OUTCOME TABLE based on latest query
