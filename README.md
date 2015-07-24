@@ -1,6 +1,6 @@
 UNI-CODE DEEP UI ENGINE
 ===================================
-Uni-code ui-engine manifests a flexible ux framework that allows the user
+Uni-code ui-engine manifests as a flexible ux framework that allows the user
 to aptly and promptly generate quite attractive/functionality driven programs par brief periods of space time, given that such procure
 button texturing a priore.
 
