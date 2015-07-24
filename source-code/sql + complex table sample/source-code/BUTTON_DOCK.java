@@ -33,7 +33,7 @@ public class BUTTON_DOCK extends UNICODE_MenuPanel
                 new UNICODE_MessageBoxWindow ( true, "not avilable in current version", 0.9f, new Color ( 255, 255, 255 ), new Color ( 255, 255, 255 ), new Color ( 255, 255, 255 ), new Color ( 0, 0, 0 ), false, "data/images/message box/okay/","rr", 64, 64, 0, 0, 0, 0 );    
             }
         
-        //item 0 - see all lab techs
+        //item 0 - run queries
         if ( getMenu ( ).getButtonList ( ).get ( 0 ).contains ( mEvent.getX ( ), mEvent.getY ( ) ) )
         {
             final UNICODE_GuiPanel guiPanel = ( UNICODE_GuiPanel ) getCustomComponentList ( ).get ( 0 );
