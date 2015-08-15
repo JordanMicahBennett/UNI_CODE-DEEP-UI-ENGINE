@@ -1,0 +1,255 @@
+Write SQL to achieve the following:
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+1. What was the most popular song for the month of January?
+[SOLUTION TABLE(S): spins, songs]
+select 
+	tableOfEachUserTotalSpinCountAlias.name,
+	max(tableOfEachUserTotalSpinCount)
+from
+(
+	select
+		songs.name,
+		count(*) as tableOfEachUserTotalSpinCount
+	from
+		songs join spins where songs.id = spins.songId and month(spins.date) = '01'
+	group by
+		songs.name
+	order by
+		tableOfEachUserTotalSpinCount desc
+) as tableOfEachUserTotalSpinCountAlias;
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+2. How many spins does Gertrude McKenzie have remaining on her account?
+[SOLUTION TABLE(S): spins, accounts, subscription]
+select
+	sum(tableOfEachUserTotalSpinCountAlias.maximumSpins - tableOfEachUserTotalSpinCount)
+from
+(
+	select 
+		subscriptions.maximumSpins,
+		count(*) as tableOfEachUserTotalSpinCount
+	from 
+		spins join accounts join subscriptions where spins.userId = accounts.userId and accounts.subscriptionId = subscriptions.id and accounts.userId = 1
+) as tableOfEachUserTotalSpinCountAlias;
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+3. Who is the most featured artist?
+[SOLUTION TABLE(S): songs, artistes]
+select 
+	tableOfEachArtisteTotalFeatureCountAlias.alias,
+	max(tableOfEachArtisteTotalFeatureCount)
+from
+(
+	select 
+		artistes.alias,
+		features.subCount as tableOfEachArtisteTotalFeatureCount
+	from 
+		features join artistes where features.artisteId = artistes.id
+	group by
+		artistes.alias
+	order by
+		tableOfEachArtisteTotalFeatureCount desc
+) as tableOfEachArtisteTotalFeatureCountAlias;
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+4. Which artist has the most songs from the playlist (either as main or featured)?
+[SOLUTION TABLE(S): songs, artistes]
+select 
+	tableOfEachArtisteTotalFeatureCountAlias.alias,
+	max(tableOfEachArtisteTotalFeatureCount+tableOfEachArtisteTotalNonFeatureCount)
+from
+(
+	select 
+		artistes.alias,
+		features.subCount as tableOfEachArtisteTotalFeatureCount,
+		features.mainCount as tableOfEachArtisteTotalNonFeatureCount
+	from 
+		features join artistes where features.artisteId = artistes.id
+	group by
+		artistes.alias
+	order by
+		tableOfEachArtisteTotalFeatureCount desc
+) as tableOfEachArtisteTotalFeatureCountAlias;
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+5. Robert Mathis shared his playlist with Gertrude.
+[SOLUTION TABLE(S): sharedplaylists]
+insert into sharedplaylists values ( 0, 2, 1, 1, '20150101');
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+6. How many songs is Drake on, as either main artiste or featured?
+[SOLUTION TABLE(S): sharedplaylists]
+select
+	artistes.alias,
+	count(*) as tableOfEachArtisteSongTotalCount
+from
+	songs join artistes where ( songs.artisteId = artistes.id or songs.featuringArtisteId = artistes.id ) and artistes.id = 24 
+group by
+	artistes.alias 
+
+	
+	
+	
+
+	
+Schema addition: Artistes are now to be paid royalties, each time their song is played by a subscribed user. The rate is $5 for each song and $1.50 per feature.
+//////////////////////////////////////////////////////////////////////////////
+7. How much money will Nicki Minaj earn in royalties for January?
+///////////////////////////////////////////////////////////////////////////////////////////
+///NOTE: I take major to mean main artiste, and minor to mean featured.
+//So, tableOfSelectedArtisteMajorSpinMultiplier derives main artiste event,
+//while tableOfSelectedArtisteMinorSpinMultiplier derives featured artiste event.
+///////////////////////////////////////////////////////////////////////////////////////////
+[SOLUTION TABLE(S): songs, spins, artistes, royalties]
+select
+	tableOfSelectedArtisteMajorSpinCount * tableOfSelectedArtisteMajorSpinMultiplier 
+	+
+	tableOfSelectedArtisteMinorSpinMultiplier * tableOfSelectedArtisteMinorSpinCount 
+from
+(
+	select 
+		artistes.alias, 
+        royalties.songRate as tableOfSelectedArtisteMajorSpinMultiplier,
+		count(songs.artisteId) as tableOfSelectedArtisteMajorSpinCount
+	from
+		songs join spins join royalties join artistes where songs.id = spins.songId and songs.artisteId = artistes.id and artistes.id = 15 and spins.artisteId = 15
+
+) as tableOfSelectedArtisteMajorSpinDetailsAlias
+,
+(
+	select 
+		artistes.alias, 
+        royalties.featureRate as tableOfSelectedArtisteMinorSpinMultiplier,
+		count(songs.featuringArtisteId) as tableOfSelectedArtisteMinorSpinCount
+	from
+		songs join spins join royalties join artistes where songs.id = spins.songId and songs.featuringArtisteId = artistes.id and artistes.id = 15
+
+) as tableOfSelectedArtisteMinorSpinDetailsAlias
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+//with ranking, any subquery requires grouping. Not more than one of such.
+8. Rank the top 3 earners based on royalties for the month?
+[SOLUTION TABLE(S): songs, spins, artistes, royalties]
+select
+    tableOfSelectedArtisteMinorAlias,
+	tableOfSelectedArtisteMajorSpinCount * tableOfSelectedArtisteMajorSpinMultiplier
+	+
+	tableOfSelectedArtisteMinorSpinMultiplier * tableOfSelectedArtisteMinorSpinCount
+from
+(
+	select 
+		artistes.alias as tableOfSelectedArtisteMajorAlias, 
+        royalties.songRate as tableOfSelectedArtisteMajorSpinMultiplier,
+		count(songs.artisteId) as tableOfSelectedArtisteMajorSpinCount
+	from
+		songs join spins join royalties join artistes where songs.id = spins.songId and songs.artisteId = artistes.id and month(spins.date) = '01' 
+	order by
+		artistes.alias desc
+) as tableOfSelectedArtisteMajorSpinDetailsAlias
+,
+(
+	select 
+		artistes.alias as tableOfSelectedArtisteMinorAlias, 
+        royalties.featureRate as tableOfSelectedArtisteMinorSpinMultiplier,
+		count(songs.featuringArtisteId) as tableOfSelectedArtisteMinorSpinCount
+	from
+		songs join spins join royalties join artistes where songs.id = spins.songId and songs.featuringArtisteId = artistes.id and month(spins.date) = '01' 
+	group by
+		artistes.alias   
+	order by	
+		artistes.alias desc
+	limit 
+		3
+) as tableOfSelectedArtisteMinorSpinDetailsAlias
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+9. How much royalties is collected based on the listenership of Jake Locker?
+[SOLUTION TABLE(S): songs, spins, artistes, royalties, users, playlists]
+select
+	sum(tableOfSelectedArtisteMajorSpinCount * tableOfSelectedArtisteMajorSpinMultiplier)
+	+
+	sum(tableOfSelectedArtisteMinorSpinMultiplier * tableOfSelectedArtisteMinorSpinCount)
+from
+(
+	select 
+		artistes.alias, 
+        royalties.songRate as tableOfSelectedArtisteMajorSpinMultiplier,
+		count(songs.artisteId) as tableOfSelectedArtisteMajorSpinCount
+	from
+		songs join spins join royalties join artistes join users join playlists where songs.id = spins.songId and songs.artisteId = artistes.id and songs.id = playlists.songId and spins.songId = playlists.songId and users.id = 3
+
+) as tableOfSelectedArtisteMajorSpinDetailsAlias
+,
+(
+	select 
+		artistes.alias, 
+        royalties.featureRate as tableOfSelectedArtisteMinorSpinMultiplier,
+		count(songs.featuringArtisteId) as tableOfSelectedArtisteMinorSpinCount
+	from
+		songs join spins join royalties join artistes join users join playlists where songs.id = spins.songId and songs.featuringArtisteId = artistes.id and songs.id = playlists.songId and spins.songId = playlists.songId and users.id = 3 /*constrain on john's listerner ship*/
+	group by
+		artistes.alias   
+	order by	
+		tableOfSelectedArtisteMinorSpinMultiplier, tableOfSelectedArtisteMinorSpinCount desc
+) as tableOfSelectedArtisteMinorSpinDetailsAlias
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////
+10. What is the total royalties to be paid over by the online radio station?
+[SOLUTION TABLE(S): songs, spins, artistes, royalties]
+select
+	sum(tableOfSelectedArtisteMajorSpinCount * tableOfSelectedArtisteMajorSpinMultiplier)
+	+
+	sum(tableOfSelectedArtisteMinorSpinMultiplier * tableOfSelectedArtisteMinorSpinCount)
+from
+(
+	select 
+		artistes.alias, 
+        royalties.songRate as tableOfSelectedArtisteMajorSpinMultiplier,
+		count(songs.artisteId) as tableOfSelectedArtisteMajorSpinCount
+	from
+		songs join spins join royalties join artistes where songs.id = spins.songId and songs.artisteId = artistes.id 
+
+) as tableOfSelectedArtisteMajorSpinDetailsAlias
+,
+(
+	select 
+		artistes.alias, 
+        royalties.featureRate as tableOfSelectedArtisteMinorSpinMultiplier,
+		count(songs.featuringArtisteId) as tableOfSelectedArtisteMinorSpinCount
+	from
+		songs join spins join royalties join artistes where songs.id = spins.songId and songs.featuringArtisteId = artistes.id
+	group by
+		artistes.alias   
+	order by	
+		tableOfSelectedArtisteMinorSpinMultiplier, tableOfSelectedArtisteMinorSpinCount desc
+) as tableOfSelectedArtisteMinorSpinDetailsAlias

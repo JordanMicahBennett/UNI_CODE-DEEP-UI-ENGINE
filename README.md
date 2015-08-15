@@ -4,7 +4,7 @@ Uni-code ui-engine manifests as a flexible ux framework that allows the user
 to aptly and promptly generate quite attractive/functionality driven programs par brief periods of space time, given that such procure
 button texturing a priore.
 
-One simply has to follow button texture naming convention amidst framework. (See DOCUMENTATION.txt and INSTRUCTION.txt)
+One simply has to follow button texture naming convention amidst framework. (See [DOCUMENTATION.txt](https://raw.githubusercontent.com/JordanMicahBennett/UNI_CODE-DEEP-UI-ENGINE/master/DOCUMENTATION.txt) and [INSTRUCTION.txt](https://raw.githubusercontent.com/JordanMicahBennett/UNI_CODE-DEEP-UI-ENGINE/master/INSTRUCTIONS.txt))
 
 
 

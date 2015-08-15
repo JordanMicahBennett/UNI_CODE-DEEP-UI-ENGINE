@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=
+comment0.target=SQLComposer()
+comment1.params=
+comment1.target=org.hibernate.SessionFactory\ getSessionFactory()
+comment2.params=message\ queryString\ dataColumnIndex
+comment2.target=java.util.List\ getSqlResultFromSelection(java.lang.String,\ java.lang.String,\ int)
+comment3.params=message\ className\ parameters
+comment3.target=void\ insertItem(java.lang.String,\ java.lang.String,\ java.lang.Object[])
+numComments=4

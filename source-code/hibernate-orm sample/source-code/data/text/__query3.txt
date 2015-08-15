@@ -1,0 +1,16 @@
+select 
+	tableOfEachArtisteTotalFeatureCountAlias.alias,
+	max(tableOfEachArtisteTotalFeatureCount+tableOfEachArtisteTotalNonFeatureCount)
+from
+(
+	select 
+		artistes.alias,
+		features.subCount as tableOfEachArtisteTotalFeatureCount,
+		features.mainCount as tableOfEachArtisteTotalNonFeatureCount
+	from 
+		features join artistes where features.artisteId = artistes.id
+	group by
+		artistes.alias
+	order by
+		tableOfEachArtisteTotalFeatureCount desc
+) as tableOfEachArtisteTotalFeatureCountAlias;

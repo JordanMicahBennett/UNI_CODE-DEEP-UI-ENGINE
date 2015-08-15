@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Sharedplaylists()
+comment1.params=
+comment1.target=int\ getId()
+comment10.params=value
+comment10.target=void\ setDate(java.lang.String)
+comment2.params=
+comment2.target=int\ getSourceUserId()
+comment3.params=
+comment3.target=int\ getTargetUserId()
+comment4.params=
+comment4.target=int\ getPlaylistId()
+comment5.params=
+comment5.target=java.lang.String\ getDate()
+comment6.params=value
+comment6.target=void\ setId(int)
+comment7.params=value
+comment7.target=void\ setSourceUserId(int)
+comment8.params=value
+comment8.target=void\ setTargetUserId(int)
+comment9.params=value
+comment9.target=void\ setPlaylistId(int)
+numComments=11

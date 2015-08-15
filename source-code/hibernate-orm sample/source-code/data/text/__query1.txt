@@ -1,0 +1,10 @@
+select
+	sum(tableOfEachUserTotalSpinCountAlias.maximumSpins - tableOfEachUserTotalSpinCount)
+from
+(
+	select 
+		subscriptions.maximumSpins,
+		count(*) as tableOfEachUserTotalSpinCount
+	from 
+		spins join accounts join subscriptions where spins.userId = accounts.userId and accounts.subscriptionId = subscriptions.id and accounts.userId = 1
+) as tableOfEachUserTotalSpinCountAlias;

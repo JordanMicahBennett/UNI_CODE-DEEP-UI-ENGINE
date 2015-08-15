@@ -1,0 +1,15 @@
+select 
+	tableOfEachUserTotalSpinCountAlias.name,
+	max(tableOfEachUserTotalSpinCount)
+from
+(
+	select
+		songs.name,
+		count(*) as tableOfEachUserTotalSpinCount
+	from
+		songs join spins where songs.id = spins.songId and month(spins.date) = '01'
+	group by
+		songs.name
+	order by
+		tableOfEachUserTotalSpinCount desc
+) as tableOfEachUserTotalSpinCountAlias;
