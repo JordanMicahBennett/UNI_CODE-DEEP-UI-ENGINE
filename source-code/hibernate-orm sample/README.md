@@ -32,7 +32,7 @@ INSERTING
 
 [SQLComposer](https://github.com/JordanMicahBennett/UNI_CODE-DEEP-UI-ENGINE/blob/master/source-code/hibernate-orm sample/source-code/SQLComposer.java).insertItem (...) allows for dynamism; allows for insertion based wrt any annotated class, 3 parameter long signature, of message(optional, see OPTIONAL), classNameString, and input parameters.
 
-NOTE: 'Inserting' requires the creation of [map relation url](https://github.com/JordanMicahBennett/UNI_CODE-DEEP-UI-ENGINE/blob/master/source-code/hibernate-orm sample/hibernate.cfg.xml) and [annotated class](https://github.com/JordanMicahBennett/UNI_CODE-DEEP-UI-ENGINE/blob/master/source-code/hibernate-orm sample/Sharedplaylists.java) (if these components aren't already existent)
+NOTE: 'Inserting' requires the creation of [map relation url](https://github.com/JordanMicahBennett/UNI_CODE-DEEP-UI-ENGINE/blob/master/source-code/hibernate-orm%20sample/source-code/hibernate.cfg.xml) and [annotated class](https://github.com/JordanMicahBennett/UNI_CODE-DEEP-UI-ENGINE/blob/master/source-code/hibernate-orm%20sample/source-code/Sharedplaylists.java) (if these components aren't already existent)
 
 
 
