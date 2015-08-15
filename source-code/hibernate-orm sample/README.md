@@ -44,9 +44,3 @@ Message is simply a user-interface display string, indicating details regarding 
 To ommit, pass empty string.
 
 
-
-
-
-AUTHOR PORTFOLIO
-============================================
-http://folioverse.appspot.com/
