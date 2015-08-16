@@ -47,7 +47,7 @@ public class Sharedplaylists
         {
             return date;
         }        
-        //muators
+        //mutators
         public void setId ( int value )
         {
             id = value;

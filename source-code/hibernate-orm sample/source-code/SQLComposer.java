@@ -43,7 +43,7 @@ public class SQLComposer
         return items;
     }
     
-    public void insertItem ( String message, String className, Object [ ] parameters ) //constraint: alphabetic method listing. Thereafter, params shall be organized with rerspect to this alphabetic sorting.
+    public void insertItem ( String message, String className, Object [ ] parameters ) //constraint: alphabetic method listing. Thereafter, parameters shall be organized with respect to this alphabetic sorting.
     {
         System.out.println ( message + ":\n" );
         

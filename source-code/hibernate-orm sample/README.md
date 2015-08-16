@@ -49,4 +49,4 @@ To ommit, pass empty string.
 
 REMINDER
 ==============
-Ensure that [hibernate configuration file](https://github.com/JordanMicahBennett/UNI_CODE-DEEP-UI-ENGINE/blob/master/source-code/hibernate-orm%20sample/source-code/hibernate.cfg.xml) is properly configured in desired database connection terms.
+Ensure that [hibernate configuration file](https://github.com/JordanMicahBennett/UNI_CODE-DEEP-UI-ENGINE/blob/master/source-code/hibernate-orm%20sample/source-code/hibernate.cfg.xml) is properly configured in desired database connection terms. Utilize sample sql in tandem with sample [DisplayConsole ( ).void ( )](https://github.com/JordanMicahBennett/UNI_CODE-DEEP-UI-ENGINE/blob/master/source-code/hibernate-orm sample/source-code/DisplayConsole.java) demonstration content.
