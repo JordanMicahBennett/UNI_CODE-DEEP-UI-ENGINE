@@ -4,6 +4,7 @@
 
 <hibernate-configuration>
    <session-factory>
+   <property name="hibernate.hbm2ddl.auto">create</property> <!-- COMMENT OUT THIS LINE AFTER FIRST RUN!!!!!!!!!!!!!!!! -->
    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
    <property name="hibernate.connection.url">jdbc:mysql://localhost/radio</property>
@@ -11,6 +12,16 @@
    <property name="hibernate.connection.password">primetrust</property>
    <property name="hibernate.hbm2ddl.auto">update</property>
    <property name="show_sql">false</property>
+   <mapping class="Users"/>
+   <mapping class="Subscriptions"/>
+   <mapping class="Spins"/>
+   <mapping class="Songs"/>
    <mapping class="Sharedplaylists"/>
+   <mapping class="PlaylistDescriptions"/>
+   <mapping class="Royalties"/>
+   <mapping class="Playlists"/>
+   <mapping class="Features"/>
+   <mapping class="Artistes"/>
+   <mapping class="Accounts"/>
 </session-factory>
 </hibernate-configuration>

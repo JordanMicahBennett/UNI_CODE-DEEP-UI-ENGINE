@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Spins()
+comment1.params=
+comment1.target=int\ getId()
+comment10.params=value
+comment10.target=void\ setArtisteId(int)
+comment2.params=
+comment2.target=int\ getUserId()
+comment3.params=
+comment3.target=java.lang.String\ getDate()
+comment4.params=
+comment4.target=int\ getSongId()
+comment5.params=
+comment5.target=int\ getArtisteId()
+comment6.params=value
+comment6.target=void\ setId(int)
+comment7.params=value
+comment7.target=void\ setUserId(int)
+comment8.params=value
+comment8.target=void\ setDate(java.lang.String)
+comment9.params=value
+comment9.target=void\ setSongId(int)
+numComments=11

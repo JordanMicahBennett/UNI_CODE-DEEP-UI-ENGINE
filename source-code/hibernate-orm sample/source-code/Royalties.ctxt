@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Royalties()
+comment1.params=
+comment1.target=int\ getId()
+comment2.params=
+comment2.target=double\ getSongRate()
+comment3.params=
+comment3.target=double\ getFeatureRate()
+comment4.params=value
+comment4.target=void\ setId(int)
+comment5.params=value
+comment5.target=void\ setSongRate(double)
+comment6.params=value
+comment6.target=void\ setFeatureRate(double)
+numComments=7

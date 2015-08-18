@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Accounts()
+comment1.params=
+comment1.target=int\ getId()
+comment10.params=value
+comment10.target=void\ setEndDate(java.lang.String)
+comment2.params=
+comment2.target=int\ getSubscriptionId()
+comment3.params=
+comment3.target=int\ getUserId()
+comment4.params=
+comment4.target=java.lang.String\ getStartDate()
+comment5.params=
+comment5.target=java.lang.String\ getEndDate()
+comment6.params=value
+comment6.target=void\ setId(int)
+comment7.params=value
+comment7.target=void\ setSubscriptionId(int)
+comment8.params=value
+comment8.target=void\ setUserId(int)
+comment9.params=value
+comment9.target=void\ setStartDate(java.lang.String)
+numComments=11

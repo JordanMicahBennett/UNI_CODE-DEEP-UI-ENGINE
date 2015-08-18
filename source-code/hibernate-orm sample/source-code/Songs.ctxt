@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Songs()
+comment1.params=
+comment1.target=int\ getId()
+comment2.params=
+comment2.target=int\ getArtisteId()
+comment3.params=
+comment3.target=int\ getDuration()
+comment4.params=
+comment4.target=java.lang.String\ getDate()
+comment5.params=value
+comment5.target=void\ setId(int)
+comment6.params=value
+comment6.target=void\ setArtisteId(int)
+comment7.params=value
+comment7.target=void\ setDuration(int)
+comment8.params=value
+comment8.target=void\ setDate(java.lang.String)
+numComments=9

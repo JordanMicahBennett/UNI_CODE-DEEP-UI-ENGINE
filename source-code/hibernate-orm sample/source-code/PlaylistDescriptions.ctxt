@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=
+comment0.target=PlaylistDescriptions()
+comment1.params=
+comment1.target=int\ getId()
+comment2.params=
+comment2.target=int\ getUserId()
+comment3.params=
+comment3.target=java.lang.String\ getName()
+comment4.params=value
+comment4.target=void\ setId(int)
+comment5.params=value
+comment5.target=void\ setUserId(int)
+comment6.params=value
+comment6.target=void\ setName(java.lang.String)
+numComments=7

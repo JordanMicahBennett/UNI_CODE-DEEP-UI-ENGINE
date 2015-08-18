@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=_SQLComposer
+comment0.target=SQLComposerDebugger(SQLComposer)
+comment1.params=className
+comment1.target=void\ showAccessorMethodsAtInsert(java.lang.String)
+numComments=2

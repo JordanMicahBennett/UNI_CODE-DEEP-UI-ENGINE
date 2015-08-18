@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Artistes()
+comment1.params=
+comment1.target=int\ getId()
+comment10.params=value
+comment10.target=void\ setDate(java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ getAlias()
+comment3.params=
+comment3.target=double\ getBalance()
+comment4.params=
+comment4.target=double\ getOwedBalance()
+comment5.params=
+comment5.target=java.lang.String\ getJoinDate()
+comment6.params=value
+comment6.target=void\ setId(int)
+comment7.params=value
+comment7.target=void\ setAlias(java.lang.String)
+comment8.params=value
+comment8.target=void\ setBalance(double)
+comment9.params=value
+comment9.target=void\ setOwedBalance(double)
+numComments=11
