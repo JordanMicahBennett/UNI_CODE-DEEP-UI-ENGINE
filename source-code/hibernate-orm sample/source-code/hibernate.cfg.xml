@@ -4,7 +4,7 @@
 
 <hibernate-configuration>
    <session-factory>
-   <property name="hibernate.hbm2ddl.auto">create</property> <!-- COMMENT OUT THIS LINE AFTER FIRST RUN!!!!!!!!!!!!!!!! -->
+   <property name="hibernate.hbm2ddl.auto">create</property> <!-- REPLACE create WITH update, AFTER FIRST RUN (given the database is clean @ first run, and you hadn't invoked the sql population schema in 'data/miscellaneous/Dump20150814.sql')!!!!!!!!!!!!!!!! -->
    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
    <property name="hibernate.connection.url">jdbc:mysql://localhost/radio</property>
