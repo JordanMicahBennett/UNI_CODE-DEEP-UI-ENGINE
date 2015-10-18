@@ -25,7 +25,7 @@ SELECTING
 
 
 
-INSERTING
+INSERTING (entails java generics)
 ==============
 [SQLComposer](https://github.com/JordanMicahBennett/UNI_CODE-DEEP-UI-ENGINE/blob/master/source-code/hibernate-orm sample/source-code/SQLComposer.java).insertItem ( String message, String classNameString, Object [ ] insertionParameters ), where message is optional, see OPTIONAL.
 
