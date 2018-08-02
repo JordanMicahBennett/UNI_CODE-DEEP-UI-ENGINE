@@ -4,9 +4,9 @@ Uni-code ui-engine manifests as a flexible ux framework that allows the user
 to aptly and promptly generate quite attractive/functionality driven programs par brief periods of space time, given that such procure
 button texturing a priore.
 
-One simply has to follow button texture naming convention amidst framework. (See [DOCUMENTATION.txt](https://github.com/JordanMicahBennett/UNI_CODE-DEEP-UI-ENGINE/blob/master/DOCUMENTATION.txt) and [INSTRUCTION.txt](https://github.com/JordanMicahBennett/UNI_CODE-DEEP-UI-ENGINE/blob/master/DOCUMENTATION.txt))
+One simply has to follow button texture naming convention amidst framework. (See [DOCUMENTATION.txt](https://github.com/JordanMicahBennett/UNI_CODE-DEEP-UI-ENGINE/blob/master/DOCUMENTATION.txt) and [INSTRUCTION.txt](https://github.com/JordanMicahBennett/UNI_CODE-DEEP-UI-ENGINE/blob/master/INSTRUCTION.txt))
 
-Projects built atop Deep Ui Engine 
+PROJECTS BUILT ATOP DEEP UI ENGINE
 ===================================
 1. [Consciencia: An ide and programming language.](https://github.com/JordanMicahBennett/CONSCIENCIA)
 2. [Illumium: A pretty OS interface.](
