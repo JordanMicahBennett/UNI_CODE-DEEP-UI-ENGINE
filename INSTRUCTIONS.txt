@@ -17,7 +17,7 @@ IMPORTANT!
 
 
 PROJECTS which utilize uni-code UI engine:
-https://github.com/JordanMicahBennett/SYNTHETIC-SENTIENCE
+https://github.com/JordanMicahBennett/SIMPLE-NEURAL-NETWORK
 https://github.com/JordanMicahBennett/BRAIN-UNIVERSE-SYNONYMOUS-INTERFACE
 https://github.com/JordanMicahBennett/CONSCIENCIA OR http://www.consciencia-language.tk/
 https://github.com/JordanMicahBennett/MOSS...MICAH-OPERATING-SYSTEM-SIMULATOR
