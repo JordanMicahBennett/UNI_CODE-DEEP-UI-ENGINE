@@ -6,7 +6,14 @@ button texturing a priore.
 
 One simply has to follow button texture naming convention amidst framework. (See [DOCUMENTATION.txt](https://github.com/JordanMicahBennett/UNI_CODE-DEEP-UI-ENGINE/blob/master/DOCUMENTATION.txt) and [INSTRUCTION.txt](https://github.com/JordanMicahBennett/UNI_CODE-DEEP-UI-ENGINE/blob/master/DOCUMENTATION.txt))
 
-
+Projects built atop Deep Ui Engine 
+===================================
+1. [Consciencia: An ide and programming language.](https://github.com/JordanMicahBennett/CONSCIENCIA)
+2. [Illumium: A pretty OS interface](
+https://github.com/JordanMicahBennett/BRAIN-UNIVERSE-SYNONYMOUS-INTERFACE)
+3. [Simple Artificial Neural Network](https://github.com/JordanMicahBennett/SIMPLE-NEURAL-NETWORK)
+4. [Automatanism: A simple implementation of life as invented by John Conway.](https://github.com/JordanMicahBennett/AUTOMATANISM)
+5. [Moss: Os simulator](https://github.com/JordanMicahBennett/MOSS...MICAH-OPERATING-SYSTEM-SIMULATOR)
 
 UNIQUELY CUSTOMIZABLE MENU-BUTTON LAYOUT
 ===================================
