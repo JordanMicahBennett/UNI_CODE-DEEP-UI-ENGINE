@@ -14,6 +14,8 @@ https://github.com/JordanMicahBennett/BRAIN-UNIVERSE-SYNONYMOUS-INTERFACE)
 3. [Simple Artificial Neural Network.](https://github.com/JordanMicahBennett/SIMPLE-NEURAL-NETWORK)
 4. [Automatanism: A simple implementation of life as invented by John Conway.](https://github.com/JordanMicahBennett/AUTOMATANISM)
 5. [Moss: An Os simulator.](https://github.com/JordanMicahBennett/MOSS...MICAH-OPERATING-SYSTEM-SIMULATOR)
+6. ["ivGarage" with 9600+ downloads: An old gta iv vehicle configuration editor built using a very very early version of my DeepGui kit.](https://www.gtagaming.com/ivgarage-easiest-handling-editing-f14454.html)
+7. ["ivPM" with 28000+ downloads: An old gta iv game performance enhancement tool built using a very early version of my DeepGui kit.](https://www.gtagaming.com/ivpm-gta-iv-performance-manager-get-more-fps-f14136.html)
 
 UNIQUELY CUSTOMIZABLE MENU-BUTTON LAYOUT
 ===================================
